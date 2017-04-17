@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>  
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body onload=load()>
+
+
+<!--Start Navbar-->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="../index.html">Home</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="question1/index.html">Question 1</a></li>
+      <li><a href="../question2/index.html">Question 2</a></li>
+      <li><a href="../question3/index.html">Question 3</a></li>
+      <li><a href="../question4_1/index.html">Question 4</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+<!--Area here to insert the displayed data-->
+
+
+
+<!--Start of script to perform a GET request from the server-->
+<script>
+function load() {
+
+    var rsp = {
+        "configurations": [
+            { "name":"host1", "hostname": "nessus-ntp.lab.com", "port": 1241, "username": "toto"},
+            { "name":"host2", "hostname": "nessus-xml.lab.com", "port": 3384, "username": "admin"}
+        ]
+    }
+    var conn = new XMLHttpRequest();
+
+    conn.open('GET', "http://md5.jsontest.com/?text=[text", true); 
+    //conn.open('GET', "http://[yourserver]/download/request?host=2", true); 
+    conn.send(); 
+
+    conn.onreadystatechange = process; 
+    function process(e){
+        if (conn.readyState == 4 && conn.status == 200){
+
+            // Parse through the returned JSON object, and save to a variable for use later
+            var response = JSON.parse(conn.responseText); 
+
+            var x=""; 
+            var createDiv;
+            var toAdd = document.createDocumentFragment();
+             for (i in rsp.configurations) {
+                 createDiv = document.createElement('div');
+                 createDiv.id="this"+i; 
+                 x += "<h1 class='title'>Name: " + rsp.configurations[i].name + "</h1>"
+                      +"<p>Hostname: " + rsp.configurations[i].hostname +"</p>"
+                      +"<p>Port: " + rsp.configurations[i].port +"</p>"
+                      +"<p>Username: " + rsp.configurations[i].username +"</p>";
+                createDiv.innerHTML = x; 
+                toAdd.appendChild(createDiv);
+                document.body.appendChild(toAdd); 
+                x=""; 
+            }
+        }
+    }  
+} 
+ 
+</script>
+
+</body>
+
+
+</html>
+
+
+
+<!--This code was tested using the website "http://md5.jsontest.com/?text=[text", So it should return values based on the hypothetical URL that was given-->
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel = "stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+</head>
+
+<body onload=load()>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="../index.html">Home</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../question1/index.html">Question 1</a></li>
+      <li><a href="../question2/index.html">Question 2</a></li>
+      <li class="active"><a href="../question3/index.html">Question 3</a></li>
+      <li><a href="../question4_1/index.html">Question 4</a></li>
+    </ul>
+  </div>
+</nav>
+
+<h1 style="text-align: center;">Returned JSON data, click the tabs to filter search</h1>
+
+<div class="buttons">
+    <button id="button1" class="myButton">Toggle Host Name</button>
+    <button id="button2" class="myButton">Toggle Port Num </button>
+    <button id="button3" class="myButton">Toggle Username </button>
+</div>
+
+
+<div id="parentDiv"></div>
+
+
+<script type="text/javascript" src="script.js"></script>
+
+
+</body>
+</html>

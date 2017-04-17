@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <link rel = "stylesheet" href="style.css"/>
+    <link rel = "stylesheet" href="jspkg/jquery.dynatable.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+
+</head>
+
+<body onload=load()>
+<!--Start of navbar to iterate through all the questions-->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="../index.html">Home</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../question1/index.html">Question 1</a></li>
+      <li><a href="../question2/index.html">Question 2</a></li>
+      <li><a href="../question3/index.html">Question 3</a></li>
+      <li class="active"><a href="../question4_1/index.html">Question 4</a></li>
+    </ul>
+  </div>
+</nav>
+<!--end of navbar-->
+
+<!--Search Bar-->
+<div class="form-group animated flipInY" id="inputBox">
+    <label for="input">Host Name:</label>
+    <input type="text" id="input" onkeyup="filter()" placeholder="Enter host name ">
+</div>
+<!--End Search Bar-->
+
+<!--Data Table Definition-->
+<table id="dataTable" class="table table-hover animated flipInY">
+    <thead style="text-align: center;">
+          <th data-dynatable-column="name">Name</th>
+          <th data-dynatable-column="hostName">Host Name</th>
+          <th data-dynatable-column="port">Port Number</th>
+          <th data-dynatable-column="username"> Username</th>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+<!--End Data Table definition-->
+
+<script type="text/javascript" src="jspkg/jquery.dynatable.js"></script>
+<script type="text/javascript" src="script.js"></script>
+
+
+</body>
+</html>
