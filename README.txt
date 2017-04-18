@@ -33,4 +33,4 @@ Question 4
 
 Question 5
 
-	So if I decided to send host=10000, i'm assuming that the response will be the first 10000 fields. So in order to handle this, I would do what I did in question 4. I believe making everything display as a table, makes it more readable, and if the user is requesting that many fields, they would probably want a way to narrow down the search. 
+	So if I decided to send host=10000, i'm assuming that the response will be the first 10000 fields. So in order to handle this, I would do what I did in question 4. I believe making everything display as a table, makes it more readable, and if the user is requesting that many fields, they would probably want a way to narrow down the search. On top of that, i specified "true" as the third parameter of my XMLHttpRequest object, which means the request should be handled asynchronously. This allows the browser to continue to work as the response data is collected. 
