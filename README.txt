@@ -1,5 +1,9 @@
 README for assessment: 
 
+Use the index.html page in the root directory to access all the questions in a navbar layout 
+
+
+
 Overview of how I handled the JSON data for testing: 
 	
 	For this entire project, I first tested getting the JSON data using the following url: http://md5.jsontest.com/?text=[text. this URL just returned a JSON object, and I was able to display it. Once I was sure that it would display properly, I moved on to create a JSON object with the data the URL I'm supposed to request inside it. So the functionality of the GET request is there, I'm just not using the data that I get from it to populate the HTML page. 
